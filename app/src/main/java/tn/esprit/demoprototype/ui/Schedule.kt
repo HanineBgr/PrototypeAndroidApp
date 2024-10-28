@@ -59,7 +59,7 @@ class ScheduleActivity : ComponentActivity() {
 }
 
 @Composable
-fun ScheduleScreen(navController: NavController) {
+fun ScheduleScreen(navController: NavController ,modifier: Modifier = Modifier) {
     var selectedTab by remember { mutableStateOf(FilterStatus.Upcoming) }
 
     Scaffold(

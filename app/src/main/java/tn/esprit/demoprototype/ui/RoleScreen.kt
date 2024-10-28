@@ -40,19 +40,16 @@ fun AppNavGraph(navController: NavHostController) {
         composable("roleSelection") {
             RoleSelectionScreen(navController)
         }
-        composable("nextScreen") {
-            // Replace this with your desired screen's content
-            NextScreen()
+        composable("signup") {
+            SignUpScreen(navController)
         }
     }
 }
 
-// RoleSelectionScreen with NavController
 @Composable
 fun RoleSelectionScreen(navController: NavHostController) {
     var selectedRole by remember { mutableStateOf("Care provider") }
 
-    // Full screen background
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -81,11 +78,10 @@ fun RoleSelectionScreen(navController: NavHostController) {
                 onClick = { selectedRole = "Care provider" }
             )
 
-            // Next Button
-            // Get Started Button
+
             Button(
                 onClick = {
-                    navController.navigate("roleSelection")
+                    navController.navigate("signup")
                 },
                 modifier = Modifier
                     .padding(horizontal = 35.dp)
@@ -105,23 +101,6 @@ fun RoleSelectionScreen(navController: NavHostController) {
     }
 }
 
-// A placeholder for the Next screen
-@Composable
-fun NextScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFFE7F0FA)), // Apply same background color here
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "Welcome to the Next Screen!",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Black
-        )
-    }
-}
 
 // RoleCard Composable
 @Composable
@@ -132,7 +111,7 @@ fun RoleCard(title: String, isSelected: Boolean, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth(0.9f)
-            .padding(vertical = 2.dp) // Reduced space between cards
+            .padding(vertical = 2.dp)
             .clickable { onClick() }
             .border(borderWidth, borderColor, RoundedCornerShape(12.dp))
             .padding(16.dp),
@@ -164,6 +143,6 @@ fun RoleCard(title: String, isSelected: Boolean, onClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun RoleSelectionScreenPreview() {
-    val navController = rememberNavController() // Mock NavController for Preview
+    val navController = rememberNavController()
     RoleSelectionScreen(navController)
 }

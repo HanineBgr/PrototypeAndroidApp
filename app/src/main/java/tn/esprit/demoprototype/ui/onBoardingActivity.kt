@@ -1,3 +1,6 @@
+package tn.esprit.demoprototype.ui.screens
+
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -26,7 +29,7 @@ fun OnBoardingScreen(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFE7F0FA)) // Apply background to the whole screen
+            .background(Color(0xFFE7F0FA))
     ) {
         Column(
             modifier = Modifier
@@ -37,7 +40,7 @@ fun OnBoardingScreen(navController: NavHostController) {
         ) {
             Spacer(modifier = Modifier.height(30.dp))
 
-            // Doctor Image
+            // Image for onboarding
             Image(
                 painter = painterResource(id = R.drawable.doctor),
                 contentDescription = "Doctor Image",
@@ -69,7 +72,11 @@ fun OnBoardingScreen(navController: NavHostController) {
             // Get Started Button
             Button(
                 onClick = {
-                    navController.navigate("roleSelection")
+                    Log.d("OnBoardingScreen", "Get Started button clicked") // Log statement
+                    navController.navigate("loginScreen") {
+                        // Clear the onboarding from the back stack
+                        popUpTo("onboarding") { inclusive = true }
+                    }
                 },
                 modifier = Modifier
                     .padding(horizontal = 35.dp)
@@ -83,15 +90,18 @@ fun OnBoardingScreen(navController: NavHostController) {
                 Text(text = "Get Started", fontSize = 18.sp, color = Color.White)
             }
 
-            // Login Instead Text
+            // Register Instead Button
             TextButton(
                 onClick = {
-                    navController.navigate("loginScreen") // Navigate to LoginScreen
+                    navController.navigate("roleSelection") {
+                        // Clear the onboarding from the back stack
+                        popUpTo("onboarding") { inclusive = true }
+                    }
                 },
                 modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)
             ) {
                 Text(
-                    text = "Already a member? Login instead",
+                    text = "Already a member? Register instead",
                     fontSize = 14.sp,
                     color = Color(0xFFA7C7E7)
                 )

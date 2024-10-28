@@ -111,7 +111,7 @@ fun LoginScreen(navController: NavHostController) {
 
             // Link to Register
             TextButton(onClick = {
-                navController.navigate("signup") // Navigate to sign-up screen
+                navController.navigate("roleSelection")
             }) {
                 Text("Don't have an account? Register", color = Color(0xFFA7C7E7))
             }

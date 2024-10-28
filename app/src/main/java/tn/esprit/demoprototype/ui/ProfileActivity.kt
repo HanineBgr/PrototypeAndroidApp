@@ -37,7 +37,7 @@ class ProfileActivity : ComponentActivity() {
 }
 
 @Composable
-fun ProfileScreen(navController: NavController) {
+fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
     var notificationEnabled by remember { mutableStateOf(false) }
 
     Column(

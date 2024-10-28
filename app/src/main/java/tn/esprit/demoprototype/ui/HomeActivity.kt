@@ -1,10 +1,6 @@
 package tn.esprit.demoprototype.ui
 
-import DoctorDetailScreen
-import LoginScreen
-import OnBoardingScreen
-import RoleSelectionScreen
-import SignUpScreen
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -67,34 +63,26 @@ fun MyApp() {
 
 @Composable
 fun AppNavGraph(navController: NavHostController, modifier: Modifier) {
-    NavHost(navController = navController, startDestination = "loginScreen", modifier = modifier) {
+    NavHost(navController = navController, startDestination = "home", modifier = modifier) {
         composable("home") {
             HomeScreen(navController)
-        }
-        composable("onBoarding") {
-            OnBoardingScreen(navController)
         }
         composable("schedule") {
             ScheduleScreen(navController)
         }
-        composable("signup") {
-            SignUpScreen(navController)
-        }
         composable("loginScreen") {
-            LoginScreen(navController)
+            ProfileScreen(navController)
         }
         composable("profile") {
             ProfileScreen(navController)
         }
-        composable("doctorDetails/{doctorName}") { backStackEntry ->
-            val doctorName = backStackEntry.arguments?.getString("doctorName")
-            DoctorDetailScreen(navController )
-        }
+
+
     }
 }
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController , modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -400,17 +388,17 @@ fun ArticleCard(title: String, author: String, date: String, imageResId: Int) {
     Card(
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier.fillMaxWidth(),
-        elevation = 4.dp // Optional: Add elevation for visual appeal
+        elevation = 4.dp
     ) {
         Row(
             modifier = Modifier
                 .fillMaxHeight()
         ) {
-            // Box to ensure the image fills the height of the card
+
             Box(
                 modifier = Modifier
-                    .fillMaxHeight() // Fill the height of the card
-                    .weight(0.2f) // Adjust the weight as needed for desired width
+                    .fillMaxHeight()
+                    .weight(0.2f)
             ) {
                 Image(
                     painter = painterResource(id = imageResId),
@@ -422,24 +410,23 @@ fun ArticleCard(title: String, author: String, date: String, imageResId: Int) {
                 )
             }
 
-            // Column for text details
             Column(
                 modifier = Modifier
-                    .fillMaxHeight() // Fill the height of the card
-                    .padding(8.dp) // Padding for text
-                    .weight(0.7f) // Take the remaining space
+                    .fillMaxHeight()
+                    .padding(8.dp)
+                    .weight(0.7f)
             ) {
                 Text(
                     text = title,
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp,
-                    modifier = Modifier.padding(bottom = 4.dp) // Space below title
+                    modifier = Modifier.padding(bottom = 4.dp)
                 )
                 Text(
                     text = "By $author",
                     fontSize = 14.sp,
                     color = Color.Gray,
-                    modifier = Modifier.padding(bottom = 2.dp) // Space below author
+                    modifier = Modifier.padding(bottom = 2.dp)
                 )
                 Text(
                     text = date,
