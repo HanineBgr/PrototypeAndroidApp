@@ -62,39 +62,35 @@ class ScheduleActivity : ComponentActivity() {
 fun ScheduleScreen(navController: NavController, modifier: Modifier = Modifier) {
     var selectedTab by remember { mutableStateOf(FilterStatus.Upcoming) }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFFE3F2FD))
-    ) {
-        Scaffold(
-            content = { padding ->
-                Column(
+    Scaffold(
+        backgroundColor = Color(0xFFE3F2FD), // Set the scaffold background color to blue
+        content = { padding ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 20.dp, start = 20.dp, end = 20.dp)
+            ) {
+                Text(
+                    text = "Schedule",
+                    style = MaterialTheme.typography.h6.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 22.sp,
+                        color = Color(0xFFA7C7E7)
+                    ),
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(top = 20.dp, start = 20.dp, end = 20.dp)
-                ) {
-                    Text(
-                        text = "Schedule",
-                        style = MaterialTheme.typography.h6.copy(
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 22.sp,
-                            color = Color(0xFFA7C7E7)
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 16.dp),
-                        textAlign = TextAlign.Left
-                    )
+                        .fillMaxWidth()
+                        .padding(vertical = 16.dp),
+                    textAlign = TextAlign.Left
+                )
 
-                    ScheduleTabs(selectedTab = selectedTab, onTabSelected = { selectedTab = it })
-                    Spacer(modifier = Modifier.height(20.dp))
-                    ScheduleList(schedules = schedules.filter { it.status == selectedTab })
-                }
+                ScheduleTabs(selectedTab = selectedTab, onTabSelected = { selectedTab = it })
+                Spacer(modifier = Modifier.height(20.dp))
+                ScheduleList(schedules = schedules.filter { it.status == selectedTab })
             }
-        )
-    }
+        }
+    )
 }
+
 
 @Composable
 fun ScheduleTabs(selectedTab: FilterStatus, onTabSelected: (FilterStatus) -> Unit) {

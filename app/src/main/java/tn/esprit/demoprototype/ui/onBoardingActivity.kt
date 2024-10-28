@@ -86,14 +86,14 @@ fun OnBoardingScreen(navController: NavHostController) {
 
             TextButton(
                 onClick = {
-                    navController.navigate("roleSelection") {
+                    navController.navigate("loginScreen") {
 
                     }
                 },
                 modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)
             ) {
                 Text(
-                    text = "Already a member? Register instead",
+                    text = "Already a member? Login instead",
                     fontSize = 14.sp,
                     color = Color(0xFFA7C7E7)
                 )
