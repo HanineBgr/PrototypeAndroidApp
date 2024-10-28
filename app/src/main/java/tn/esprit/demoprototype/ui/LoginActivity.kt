@@ -29,7 +29,7 @@ fun LoginScreen(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFE7F0FA)) // Set the background color
+            .background(Color(0xFFE7F0FA))
     ) {
         Column(
             modifier = Modifier
@@ -38,7 +38,6 @@ fun LoginScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Image for login illustration
             Image(
                 painter = painterResource(id = R.drawable.login),
                 contentDescription = "Login Illustration",
@@ -49,7 +48,6 @@ fun LoginScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Username Input Field
             OutlinedTextField(
                 value = username,
                 onValueChange = { username = it },
@@ -69,7 +67,6 @@ fun LoginScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Password Input Field
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
@@ -82,7 +79,6 @@ fun LoginScreen(navController: NavHostController) {
                     )
                 },
                 visualTransformation = PasswordVisualTransformation(),
-                //keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Password),
                 shape = RoundedCornerShape(30.dp),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -91,11 +87,9 @@ fun LoginScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(30.dp))
 
-            // Login Button
             Button(
                 onClick = {
-                    // Handle login logic here, and navigate to the next screen if successful
-                    navController.navigate("home") // Navigate to home screen
+                    navController.navigate("home")
                 },
                 modifier = Modifier
                     .width(250.dp)
@@ -109,7 +103,6 @@ fun LoginScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Link to Register
             TextButton(onClick = {
                 navController.navigate("roleSelection")
             }) {
@@ -122,6 +115,6 @@ fun LoginScreen(navController: NavHostController) {
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    val navController = rememberNavController() // Mock NavController for Preview
-    LoginScreen(navController) // Pass the mocked NavController to the LoginScreen
+    val navController = rememberNavController()
+    LoginScreen(navController)
 }

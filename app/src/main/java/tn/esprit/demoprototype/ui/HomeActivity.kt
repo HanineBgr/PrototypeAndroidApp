@@ -212,7 +212,7 @@ fun HealthPromotionCard() {
                     Spacer(modifier = Modifier.height(16.dp))
 
                     androidx.compose.material3.Button(
-                        onClick = { /* Handle login logic here */ },
+                        onClick = { },
                         modifier = Modifier
                             .width(185.dp)
                             .height(35.dp)
@@ -237,7 +237,6 @@ fun TopDoctorsSection(navController: NavHostController) {
         Doctor("Dr. Smith", "Cardiologist", 4.9, "2 km", R.drawable.doctor01),
         Doctor("Dr. Johnson", "Pediatrician", 4.7, "3 km", R.drawable.doctor02),
         Doctor("Dr. Williams", "Dermatologist", 4.6, "5 km", R.drawable.doctor03)
-        // Add more doctors as needed
     )
 
     Column {
@@ -247,7 +246,7 @@ fun TopDoctorsSection(navController: NavHostController) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(text = "Top doctors", fontSize = 18.sp, fontWeight = FontWeight.Bold)
-            TextButton(onClick = { /* View All */ }) {
+            TextButton(onClick = {  }) {
                 Text(text = "See All", color = Color(0xFF4D80E4))
             }
         }
@@ -317,7 +316,7 @@ fun DoctorCard(name: String, specialty: String, rating: Double, distance: String
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(
-                    painter = painterResource(id = tn.esprit.demoprototype.R.drawable.login), // Change to your image resource
+                    painter = painterResource(id = tn.esprit.demoprototype.R.drawable.login),
                     contentDescription = "Rating",
                     tint = Color(0xFFFFD700),
                     modifier = Modifier.size(16.dp)
@@ -325,7 +324,7 @@ fun DoctorCard(name: String, specialty: String, rating: Double, distance: String
                 Text(text = "$rating", fontSize = 12.sp)
                 Spacer(modifier = Modifier.width(12.dp))
                 Icon(
-                    painter = painterResource(id = tn.esprit.demoprototype.R.drawable.login), // Change to your image resource
+                    painter = painterResource(id = tn.esprit.demoprototype.R.drawable.login),
                     contentDescription = "Distance",
                     tint = Color.Gray,
                     modifier = Modifier.size(16.dp)
@@ -337,7 +336,6 @@ fun DoctorCard(name: String, specialty: String, rating: Double, distance: String
 }
 @Composable
 fun HealthArticlesSection() {
-    // Define a static list of articles
     val articles = listOf(
 
         Article(

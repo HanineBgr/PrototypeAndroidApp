@@ -53,7 +53,7 @@ class ScheduleActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController() // Create NavController
+            val navController = rememberNavController()
             ScheduleScreen(navController)        }
     }
 }
@@ -74,7 +74,6 @@ fun ScheduleScreen(navController: NavController, modifier: Modifier = Modifier) 
                         .fillMaxSize()
                         .padding(top = 20.dp, start = 20.dp, end = 20.dp)
                 ) {
-                    // Title added here
                     Text(
                         text = "Schedule",
                         style = MaterialTheme.typography.h6.copy(
@@ -122,15 +121,15 @@ fun ScheduleTabs(selectedTab: FilterStatus, onTabSelected: (FilterStatus) -> Uni
                             fontSize = 14.sp
                         ),
                         modifier = Modifier
-                            .padding(vertical = 8.dp) // Adjusted vertical padding for visibility
-                            .fillMaxWidth(), // Fill full width of the tab
+                            .padding(vertical = 8.dp)
+                            .fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         maxLines = 1
                     )
                 },
                 modifier = Modifier
-                    .height(40.dp) // Match the tab height
-                    .padding(vertical = 0.dp) // No additional vertical padding
+                    .height(40.dp)
+                    .padding(vertical = 0.dp)
             )
         }
     }
@@ -185,22 +184,22 @@ fun DoctorScheduleCard(schedule: Schedule) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 OutlinedButton(
-                    onClick = { /* Cancel action */ },
+                    onClick = {  },
                     modifier = Modifier.weight(1f),
                     colors = ButtonDefaults.outlinedButtonColors(
-                        backgroundColor = Color.Transparent,  // Keep transparent for outlined style
-                        contentColor = Color(0xFFA7C7E7)  // Text color
+                        backgroundColor = Color.Transparent,
+                        contentColor = Color(0xFFA7C7E7)
                     ),
-                    shape = RoundedCornerShape(20.dp)  // Rounded corners
+                    shape = RoundedCornerShape(20.dp)
                 ) {
                     Text("Cancel")
                 }
-                Spacer(modifier = Modifier.width(8.dp))  // Reduced spacing between buttons
+                Spacer(modifier = Modifier.width(8.dp))
                 Button(
-                    onClick = { /* Reschedule action */ },
+                    onClick = { },
                     modifier = Modifier.weight(1f),
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = Color(0xFFA7C7E7),  // Blue background
+                        backgroundColor = Color(0xFFA7C7E7),
                         contentColor = Color.White
                     ),
                     shape = RoundedCornerShape(20.dp)
@@ -219,7 +218,7 @@ fun DateTimeCard(date: String, time: String) {
         modifier = Modifier
             .fillMaxWidth()
             .background(Color(0xFFF1F1F1), shape = RoundedCornerShape(10.dp))
-            .padding(12.dp)  // Reduced padding for DateTimeCard
+            .padding(12.dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,

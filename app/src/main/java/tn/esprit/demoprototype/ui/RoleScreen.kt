@@ -64,14 +64,12 @@ fun RoleSelectionScreen(navController: NavHostController) {
         ) {
             Spacer(modifier = Modifier.height(10.dp))
 
-            // Patient Role Option
             RoleCard(
                 title = "Patient",
                 isSelected = selectedRole == "Patient",
                 onClick = { selectedRole = "Patient" }
             )
 
-            // Care Provider Role Option with reduced space
             RoleCard(
                 title = "Care provider",
                 isSelected = selectedRole == "Care provider",
@@ -101,8 +99,6 @@ fun RoleSelectionScreen(navController: NavHostController) {
     }
 }
 
-
-// RoleCard Composable
 @Composable
 fun RoleCard(title: String, isSelected: Boolean, onClick: () -> Unit) {
     val borderColor = if (isSelected) Color(0xFF5AB964) else Color.Gray

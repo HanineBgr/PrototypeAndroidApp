@@ -40,7 +40,6 @@ fun OnBoardingScreen(navController: NavHostController) {
         ) {
             Spacer(modifier = Modifier.height(30.dp))
 
-            // Image for onboarding
             Image(
                 painter = painterResource(id = R.drawable.doctor),
                 contentDescription = "Doctor Image",
@@ -50,7 +49,6 @@ fun OnBoardingScreen(navController: NavHostController) {
                     .width(250.dp)
             )
 
-            // Title
             Text(
                 text = "Stay Connected to Your Health",
                 fontSize = 22.sp,
@@ -60,7 +58,6 @@ fun OnBoardingScreen(navController: NavHostController) {
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
 
-            // Description
             Text(
                 text = "We offer the best remote monitoring experience for both patients and care providers",
                 fontSize = 16.sp,
@@ -69,10 +66,9 @@ fun OnBoardingScreen(navController: NavHostController) {
                 modifier = Modifier.padding(horizontal = 40.dp)
             )
 
-            // Get Started Button
             Button(
                 onClick = {
-                    Log.d("OnBoardingScreen", "Get Started button clicked") // Log statement
+                    Log.d("OnBoardingScreen", "Get Started button clicked")
                     navController.navigate("loginScreen") {
                     }
                 },
@@ -88,7 +84,6 @@ fun OnBoardingScreen(navController: NavHostController) {
                 Text(text = "Get Started", fontSize = 18.sp, color = Color.White)
             }
 
-            // Register Instead Button
             TextButton(
                 onClick = {
                     navController.navigate("roleSelection") {

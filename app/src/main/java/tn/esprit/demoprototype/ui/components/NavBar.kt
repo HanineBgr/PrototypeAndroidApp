@@ -38,7 +38,7 @@ fun BottomNavBar(navController: NavHostController) {
                         restoreState = true
                     }
                 },
-                alwaysShowLabel = false  // Hide labels
+                alwaysShowLabel = false
             )
         }
     }

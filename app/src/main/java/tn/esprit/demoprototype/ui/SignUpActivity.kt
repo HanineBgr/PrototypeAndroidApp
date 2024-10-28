@@ -36,7 +36,6 @@ fun SignUpScreen(navController: NavHostController) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Image placeholder for subscription banner
         Image(
             painter = painterResource(id = R.drawable.subscribe),
             contentDescription = "Subscribe banner",
@@ -47,7 +46,6 @@ fun SignUpScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // First Name input
         OutlinedTextField(
             value = firstName,
             onValueChange = { firstName = it },
@@ -65,7 +63,6 @@ fun SignUpScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Last Name input
         OutlinedTextField(
             value = lastName,
             onValueChange = { lastName = it },
@@ -83,7 +80,6 @@ fun SignUpScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Date of birth input
         OutlinedTextField(
             value = selectedDate,
             onValueChange = { selectedDate = it },
@@ -100,7 +96,6 @@ fun SignUpScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Gender selection
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
@@ -125,11 +120,9 @@ fun SignUpScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Sign Up Button
         Button(
             onClick = {
-                // Handle signup logic here, and navigate to the home screen if successful
-                navController.navigate("home") // Navigate to home upon signup
+                navController.navigate("home")
             },
             modifier = Modifier
                 .width(250.dp)
@@ -184,6 +177,6 @@ fun GenderSelectionOption(
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenPreview() {
-    val navController = rememberNavController() // Mock NavController for Preview
-    SignUpScreen(navController) // Pass the mocked NavController to the SignUpScreen
+    val navController = rememberNavController()
+    SignUpScreen(navController)
 }

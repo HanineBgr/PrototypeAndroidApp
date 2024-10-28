@@ -20,7 +20,6 @@ fun AppBar(showBackButton: Boolean = false, onBack: () -> Unit = {}) {
     ) {
         IconButton(onClick = onBack, enabled = showBackButton) {
             if (showBackButton) {
-               // Icon(asset = Icons.Default.ArrowBack)
             }
         }
     }

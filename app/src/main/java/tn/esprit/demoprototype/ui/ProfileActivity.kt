@@ -48,7 +48,6 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
-            // Profile Header Section
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -65,10 +64,21 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
                     )
                     Spacer(modifier = Modifier.width(16.dp))
                     Column {
-                        Text(text = "Hanine Bouguerra", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                        Text(
+                            text = "Hanine Bouguerra",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp
+                        )
                         Text(text = "Patiente", fontSize = 14.sp, color = Color.Gray)
                     }
                 }
+
+                Icon(
+                    imageVector = Icons.Default.Logout,
+                    contentDescription = "Logout",
+                    tint = Color(0xFF90CAF9),
+                    modifier = Modifier.size(24.dp)
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -84,7 +94,6 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Account Section with icons
             ProfileSection(title = "Account") {
                 ProfileItemWithIcon("Personal Data", R.drawable.p_personal)
                 ProfileItemWithIcon("Achievement", R.drawable.p_achi)
@@ -94,7 +103,6 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Notification Section with icon
             ProfileSection(title = "Notification") {
                 Row(
                     modifier = Modifier
@@ -132,21 +140,6 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
                 ProfileItemWithIcon("Privacy Policy", R.drawable.p_privacy)
                 ProfileItemWithIcon("Settings", R.drawable.p_setting)
             }
-        }
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                    .padding(bottom = 55.dp),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Icon(
-                imageVector = Icons.Default.Logout,
-                contentDescription = "Logout",
-                tint = Color(0xFF90CAF9)
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Logout", fontSize = 18.sp, color = Color(0xFF90CAF9))
         }
 
     }

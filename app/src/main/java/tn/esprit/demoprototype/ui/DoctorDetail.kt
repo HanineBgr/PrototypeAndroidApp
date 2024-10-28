@@ -87,7 +87,7 @@ fun DoctorDetailScreen(navController: NavHostController) {
 
                 androidx.compose.material3.Button(
                     onClick = {
-                      //  navController.navigate("roleSelection")
+
                     },
                     modifier = Modifier
                         .align(alignment =Alignment.CenterHorizontally)
