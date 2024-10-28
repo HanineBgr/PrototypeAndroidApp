@@ -30,7 +30,7 @@ class ProfileActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController() // Create NavController
+            val navController = rememberNavController()
             ProfileScreen(navController)
         }
     }
@@ -134,13 +134,10 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
             }
         }
 
-        Spacer(modifier = Modifier.height(2.dp))
-
-        // Logout Button
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 16.dp),
+                    .padding(bottom = 55.dp),
             horizontalArrangement = Arrangement.Center
         ) {
             Icon(

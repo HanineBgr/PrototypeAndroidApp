@@ -339,12 +339,7 @@ fun DoctorCard(name: String, specialty: String, rating: Double, distance: String
 fun HealthArticlesSection() {
     // Define a static list of articles
     val articles = listOf(
-        Article(
-            title = "The Importance of Regular Checkups",
-            author = "Dr. Sarah Jones",
-            date = "Oct 12, 2023",
-            imageResId = R.drawable.check
-        ),
+
         Article(
             title = "Healthy Eating Habits",
             author = "Dr. Adem Nasr",

@@ -59,41 +59,44 @@ class ScheduleActivity : ComponentActivity() {
 }
 
 @Composable
-fun ScheduleScreen(navController: NavController ,modifier: Modifier = Modifier) {
+fun ScheduleScreen(navController: NavController, modifier: Modifier = Modifier) {
     var selectedTab by remember { mutableStateOf(FilterStatus.Upcoming) }
 
-    Scaffold(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF2F6FF)),
-        content = { padding ->
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-
-                    .padding(top = 20.dp, start = 20.dp, end = 20.dp)
-            ) {
-                // Title added here
-                Text(
-                    text = "Schedule",
-                    style = MaterialTheme.typography.h6.copy(
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 22.sp,
-                        color = Color(0xFFA7C7E7)
-                    ),
+            .background(Color(0xFFE3F2FD))
+    ) {
+        Scaffold(
+            content = { padding ->
+                Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 16.dp),
-                    textAlign = TextAlign.Left
-                )
+                        .fillMaxSize()
+                        .padding(top = 20.dp, start = 20.dp, end = 20.dp)
+                ) {
+                    // Title added here
+                    Text(
+                        text = "Schedule",
+                        style = MaterialTheme.typography.h6.copy(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 22.sp,
+                            color = Color(0xFFA7C7E7)
+                        ),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 16.dp),
+                        textAlign = TextAlign.Left
+                    )
 
-                ScheduleTabs(selectedTab = selectedTab, onTabSelected = { selectedTab = it })
-                Spacer(modifier = Modifier.height(20.dp))
-                ScheduleList(schedules = schedules.filter { it.status == selectedTab })
+                    ScheduleTabs(selectedTab = selectedTab, onTabSelected = { selectedTab = it })
+                    Spacer(modifier = Modifier.height(20.dp))
+                    ScheduleList(schedules = schedules.filter { it.status == selectedTab })
+                }
             }
-        }
-    )
+        )
+    }
 }
+
 @Composable
 fun ScheduleTabs(selectedTab: FilterStatus, onTabSelected: (FilterStatus) -> Unit) {
     val tabLabels = listOf("Upcoming", "Completed", "Canceled")
@@ -198,9 +201,9 @@ fun DoctorScheduleCard(schedule: Schedule) {
                     modifier = Modifier.weight(1f),
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = Color(0xFFA7C7E7),  // Blue background
-                        contentColor = Color.White  // White text
+                        contentColor = Color.White
                     ),
-                    shape = RoundedCornerShape(20.dp)  // Rounded corners
+                    shape = RoundedCornerShape(20.dp)
                 ) {
                     Text("Reschedule")
                 }

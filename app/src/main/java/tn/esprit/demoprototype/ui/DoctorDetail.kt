@@ -133,12 +133,12 @@ fun DoctorInfo() {
 
         Column {
             Text(
-                text = "Dr. Ahmed Salah",
+                text = "Dr. Jonhson",
                 fontWeight = FontWeight.Bold,
                 fontSize = 18.sp
             )
             Text(
-                text = "Cardiologist",
+                text = "Pediatrician",
                 color = Color.Gray,
                 fontSize = 14.sp
             )
@@ -217,7 +217,7 @@ fun AppointmentSlots() {
             }
             Spacer(modifier = Modifier.width(12.dp))
 
-            DaySlot(day = "Sat", date = "25", isSelected = selectedDay == "Fri") {
+            DaySlot(day = "Sat", date = "26", isSelected = selectedDay == "Sat") {
                 selectedDay = "Sat"
             }
         }

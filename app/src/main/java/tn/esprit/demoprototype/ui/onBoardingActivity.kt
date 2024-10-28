@@ -74,8 +74,6 @@ fun OnBoardingScreen(navController: NavHostController) {
                 onClick = {
                     Log.d("OnBoardingScreen", "Get Started button clicked") // Log statement
                     navController.navigate("loginScreen") {
-                        // Clear the onboarding from the back stack
-                        popUpTo("onboarding") { inclusive = true }
                     }
                 },
                 modifier = Modifier
@@ -94,8 +92,7 @@ fun OnBoardingScreen(navController: NavHostController) {
             TextButton(
                 onClick = {
                     navController.navigate("roleSelection") {
-                        // Clear the onboarding from the back stack
-                        popUpTo("onboarding") { inclusive = true }
+
                     }
                 },
                 modifier = Modifier.padding(top = 8.dp, bottom = 20.dp)

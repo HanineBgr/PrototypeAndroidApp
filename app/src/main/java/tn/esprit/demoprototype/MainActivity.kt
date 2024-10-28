@@ -48,7 +48,7 @@ fun MyApp() {
             LoginScreen(navController)
         }
         composable("home") {
-            HomeScreenWithBottomNav(navController) // Use the new composable for bottom navigation
+            HomeScreenWithBottomNav(navController)
         }
         composable("doctorDetails/{doctorName}") { backStackEntry ->
             val doctorName = backStackEntry.arguments?.getString("doctorName")
@@ -59,16 +59,16 @@ fun MyApp() {
 
 @Composable
 fun HomeScreenWithBottomNav(navController: NavHostController) {
-    val bottomNavController = rememberNavController() // Create a new NavController for bottom nav
+    val bottomNavController = rememberNavController()
 
     Scaffold(
-        bottomBar = { BottomNavBar(bottomNavController) } // Pass the nested NavController
+        bottomBar = { BottomNavBar(bottomNavController) }
     ) { innerPadding ->
         NavHost(navController = bottomNavController, startDestination = "home") {
-            composable("home") { HomeScreen(navController, Modifier.padding(innerPadding)) } // Your Home Screen Content
-            composable("loginScreen") { LoginScreen(navController) } // Your Home Screen Content
-            composable("schedule") { ScheduleScreen(navController, Modifier.padding(innerPadding)) } // Your Schedule Screen
-            composable("profile") { ProfileScreen(navController, Modifier.padding(innerPadding)) } // Your Profile Screen
+            composable("home") { HomeScreen(navController, Modifier.padding(innerPadding)) }
+            composable("loginScreen") { LoginScreen(navController) }
+            composable("schedule") { ScheduleScreen(navController, Modifier.padding(innerPadding)) }
+            composable("profile") { ProfileScreen(navController, Modifier.padding(innerPadding)) }
         }
     }
 }
