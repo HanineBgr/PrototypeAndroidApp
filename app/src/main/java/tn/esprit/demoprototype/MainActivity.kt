@@ -1,5 +1,6 @@
 package tn.esprit.demoprototype
 
+import ChatScreen
 import DoctorDetailScreen
 import RoleSelectionScreen
 import SignUpScreen
@@ -50,10 +51,17 @@ fun MyApp() {
         composable("home") {
             HomeScreenWithBottomNav(navController)
         }
+        composable("home") {
+            HomeScreenWithBottomNav(navController)
+        }
+        composable("chat") {
+            ChatScreen(navController)
+        }
         composable("doctorDetails/{doctorName}") { backStackEntry ->
             val doctorName = backStackEntry.arguments?.getString("doctorName")
             DoctorDetailScreen(navController)
         }
+
     }
 }
 
@@ -66,7 +74,7 @@ fun HomeScreenWithBottomNav(navController: NavHostController) {
     ) { innerPadding ->
         NavHost(navController = bottomNavController, startDestination = "home") {
             composable("home") { HomeScreen(navController, Modifier.padding(innerPadding)) }
-            composable("loginScreen") { LoginScreen(navController) }
+            composable("chat") { ChatScreen(navController) }
             composable("schedule") { ScheduleScreen(navController, Modifier.padding(innerPadding)) }
             composable("profile") { ProfileScreen(navController, Modifier.padding(innerPadding)) }
         }

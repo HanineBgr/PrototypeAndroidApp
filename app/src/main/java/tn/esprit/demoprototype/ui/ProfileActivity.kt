@@ -134,7 +134,6 @@ fun ProfileScreen(navController: NavController, modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Other Section
             ProfileSection(title = "Other") {
                 ProfileItemWithIcon("Contact Us", R.drawable.p_contact)
                 ProfileItemWithIcon("Privacy Policy", R.drawable.p_privacy)

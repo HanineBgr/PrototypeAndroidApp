@@ -28,18 +28,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import tn.esprit.demoprototype.R
-import tn.esprit.demoprototype.ui.ProfileScreen
+import tn.esprit.demoprototype.model.Schedule
 
 enum class FilterStatus { Upcoming, Completed, Canceled }
-
-data class Schedule(
-    val imgRes: Int,
-    val doctorName: String,
-    val doctorTitle: String,
-    val reservedDate: String,
-    val reservedTime: String,
-    val status: FilterStatus
-)
 
 val schedules = listOf(
     Schedule(R.drawable.doctor01, "Dr. Anastasya Syahid", "Dental Specialist", "Monday, Aug 29", "11:00 - 12:00", FilterStatus.Upcoming),
@@ -63,7 +54,7 @@ fun ScheduleScreen(navController: NavController, modifier: Modifier = Modifier) 
     var selectedTab by remember { mutableStateOf(FilterStatus.Upcoming) }
 
     Scaffold(
-        backgroundColor = Color(0xFFE3F2FD), // Set the scaffold background color to blue
+        backgroundColor = Color(0xFFE3F2FD), 
         content = { padding ->
             Column(
                 modifier = Modifier

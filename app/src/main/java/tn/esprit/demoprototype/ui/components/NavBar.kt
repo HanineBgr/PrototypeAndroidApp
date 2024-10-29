@@ -19,7 +19,7 @@ fun BottomNavBar(navController: NavHostController) {
     val navItems = listOf(
         BottomNavItem("home",  Icons.Default.Home),
         BottomNavItem("schedule",  Icons.Default.CalendarMonth),
-        BottomNavItem("loginScreen",  Icons.Default.Chat),
+        BottomNavItem("chat",  Icons.Default.Chat),
         BottomNavItem("profile", Icons.Default.Person)
     )
 

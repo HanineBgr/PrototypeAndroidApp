@@ -1,6 +1,7 @@
 package tn.esprit.demoprototype.ui
 
 
+import ChatScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -70,8 +71,8 @@ fun AppNavGraph(navController: NavHostController, modifier: Modifier) {
         composable("schedule") {
             ScheduleScreen(navController)
         }
-        composable("loginScreen") {
-            ProfileScreen(navController)
+        composable("chat") {
+            ChatScreen(navController)
         }
         composable("profile") {
             ProfileScreen(navController)
