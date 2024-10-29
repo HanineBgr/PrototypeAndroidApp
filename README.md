@@ -13,4 +13,5 @@ Ce prototype android est un protoype d'application mobile LifeLink dédiée à l
 ## Technologies Utilisées
 - **Langage** : Kotlin 
 - **Framework** : Android SDK
-- **Design** : Figma pour les maquettes UI/UX    ( https://www.figma.com/design/l1zb8dMZEBTM9Wu5dXf3J8/LifeLink?node-id=0-1&node-type=canvas&t=P9Pyfcl5HfOQRI1Y-0 ) 
+- **Design** : Figma pour les maquettes UI/UX
+   ( https://www.figma.com/design/l1zb8dMZEBTM9Wu5dXf3J8/LifeLink?node-id=0-1&node-type=canvas&t=P9Pyfcl5HfOQRI1Y-0 ) 
