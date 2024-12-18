@@ -1,17 +1,16 @@
-# Prototype Android LifeLink
+# 📱 Android LifeLink Prototype
 
-## Description
-Ce prototype android est un protoype d'application mobile LifeLink dédiée à la télésurveillance médicale, permettant un suivi à distance des patients et une communication sécurisée entre patients et professionnels de santé. L'application facilite l'accès aux services de santé via une interface conviviale et des fonctionnalités innovantes.
+## 📝 Description
+This Android prototype is a prototype of the LifeLink mobile application dedicated to remote medical monitoring, enabling the remote tracking of patients and secure communication between patients and healthcare professionals. The app facilitates access to healthcare services through a user-friendly interface and innovative features.
 
-## Fonctionnalités
-- **Suivi des patients** : Surveillance des paramètres de santé en temps réel.
-- **Communication sécurisée** : Messagerie intégrée entre patients et médecins.
-- **Gestion des rendez-vous** : Prise de rendez-vous et notifications pour les rendez-vous à venir.
-- **Historique des rendez-vous** : Consultation facile des rendez-vous passés.
-- **Notifications personnalisées** : Rappels et alertes pour les prises de médicaments et les examens.
+## ✨ Features
+- **Patient Monitoring** : Real-time tracking of health parameters.
+- **Secure Communication** : Integrated messaging between patients and doctors.
+- **Appointment Management** : Appointment scheduling and notifications for upcoming appointments.
+- **Personalized Notifications** : Reminders and alerts for medication and exams.
 
-## Technologies Utilisées
-- **Langage** : Kotlin 
+## 🛠 Tech Stack
+- **Language** : Kotlin 
 - **Framework** : Android SDK
-- **Design** : Figma pour les maquettes UI/UX
+- **Design** : Figma for UI/UX designs: 
    ( https://www.figma.com/design/l1zb8dMZEBTM9Wu5dXf3J8/LifeLink?node-id=0-1&node-type=canvas&t=P9Pyfcl5HfOQRI1Y-0 ) 
