@@ -16,6 +16,6 @@ This Android prototype is a prototype of the LifeLink mobile application dedicat
    ( https://www.figma.com/design/l1zb8dMZEBTM9Wu5dXf3J8/LifeLink?node-id=0-1&node-type=canvas&t=P9Pyfcl5HfOQRI1Y-0 ) 
 
 ## 📷 Demo
- <div align="center"> <a https://github.com/user-attachments/assets/8f1eaf3e-784d-4f5c-b1b6-fd3870964920 </a> </div>
+https://github.com/user-attachments/assets/8f1eaf3e-784d-4f5c-b1b6-fd3870964920 
 
 
